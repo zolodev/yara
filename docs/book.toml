@@ -1,0 +1,6 @@
+[book]
+authors = ["Zolo"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Yet Another Rougelike Adventure (YARA)"
