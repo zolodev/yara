@@ -94,7 +94,7 @@ mod tests {
     }
 
     #[test]
-    fn it_try_get_index_the_map() {
+    fn try_get_index_the_map() {
         let m = crate::Map::new();
         let p1 = Point::new(10, 10);
         let idx = m.try_map_index(p1);
@@ -103,7 +103,7 @@ mod tests {
     }
 
     #[test]
-    fn it_can_fit_in_bounds() {
+    fn can_fit_in_bounds() {
         let m = crate::Map::new();
 
         let p1 = Point::new(10, 10);
@@ -116,7 +116,7 @@ mod tests {
     }
 
     #[test]
-    fn it_can_not_fit_in_bounds() {
+    fn can_not_fit_in_bounds() {
         let m = crate::Map::new();
 
         let p1 = Point::new(-10, 10);
