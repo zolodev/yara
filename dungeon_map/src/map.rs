@@ -31,7 +31,7 @@ impl Map {
     pub fn render(&self, ctx: &mut BTerm) {
         for y in 0..SCREEN_HEIGHT {
             for x in 0..SCREEN_WIDTH {
-                let idx = tile_type_map_idx(x, y);
+                let idx = striding_map_index(x, y);
 
                 match self.tiles[idx] {
                     TileType::Floor => {
@@ -48,17 +48,18 @@ impl Map {
     }
 }
 
+/// Striding is a way to transform map locations (x, y) into vector indices.
 #[allow(clippy::cast_sign_loss)]
-pub fn tile_type_map_idx(x: i32, y: i32) -> usize {
+pub fn striding_map_index(x: i32, y: i32) -> usize {
     ((y * SCREEN_WIDTH) + x) as usize
 }
 
 #[cfg(test)]
 mod tests {
-    use super::tile_type_map_idx;
+    use super::striding_map_index;
 
     #[test]
-    fn it_can_find_tile_type_by_map_idx() {
-        assert_eq!(4030, tile_type_map_idx(30, 50))
+    fn it_can_index_the_map() {
+        assert_eq!(4030, striding_map_index(30, 50))
     }
 }
