@@ -29,9 +29,12 @@ struct State {
 
 impl State {
     fn new() -> Self {
+        let start_pos_x = SCREEN_WIDTH / 2;
+        let start_pos_y = SCREEN_HEIGHT / 2;
+
         Self {
             map: Map::new(),
-            player: Player::new(Point::new(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)),
+            player: Player::new(Point::new(start_pos_x, start_pos_y)),
         }
     }
 }
